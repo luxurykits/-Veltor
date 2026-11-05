@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veltor International - Luxury Kits</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .font-serif { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+<body class="bg-[#FAF8F6] text-slate-800">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const TRANSLATIONS = {
+      ES: {
+        banner: "Envío Internacional Express Gratuito en pedidos superiores a $100",
+        navKits: "Kits",
+        heroBadge: "Colección Internacional Veltor",
+        heroTitle: "Organización inteligente & elegancia sobre la marcha.",
+        heroSubtitle: "Diseñamos kits integrales de alta gama que combinan estética femenina, funcionalidad ejecutiva y orden impecable.",
+        filterAll: "Todos",
+        filterTravel: "Viajes",
+        filterCosmetics: "Cosméticos",
+        filterHome: "Hogar",
+        btnDetail: "Detalle",
+        btnAdd: "Añadir",
+        faqTitle: "Preguntas Frecuentes",
+        faq1Q: "¿De qué materiales están fabricados los kits?",
+        faq1A: "Utilizamos piel vegana de alta resistencia, herrajes de aleación de zinc en acabado plata metálica y textiles impermeables duraderos.",
+        faq2Q: "¿Hacen envíos internacionales?",
+        faq2A: "Sí, realizamos envíos exprés a todo el mundo con seguimiento en tiempo real.",
+        faq3Q: "¿Cuál es la política de devoluciones?",
+        faq3A: "Ofrecemos 30 días de garantía de satisfacción total con devolución gratuita.",
+        cartTitle: "Tu Carrito Veltor",
+        cartEmpty: "Tu carrito está vacío actualmente.",
+        subtotal: "Subtotal",
+        shipping: "Envío Internacional",
+        freeShipping: "GRATIS",
+        total: "Total",
+        btnProceedCheckout: "Proceder al Pago Seguro",
+        checkoutTitle: "Datos de Envío y Pago",
+        fullName: "Nombre Completo",
+        email: "Correo Electrónico",
+        address: "Dirección de Entrega",
+        city: "Ciudad",
+        zip: "Código Postal",
+        cardNumber: "Número de Tarjeta",
+        btnConfirmOrder: "Confirmar Pedido",
+        orderSuccessDesc: "Hemos enviado la confirmación y el código de seguimiento a tu correo. Gracias por elegir Veltor.",
+        addToCartTone: "Añadir al Carrito",
+        rights: "© 2026 Veltor International Inc. Todos los derechos reservados."
+      },
+      EN: {
+        banner: "Free Express International Shipping on orders over $100",
+        navKits: "Kits",
+        heroBadge: "Veltor International Collection",
+        heroTitle: "Smart organization & elegance on the go.",
+        heroSubtitle: "We design high-end comprehensive kits combining feminine aesthetics, executive functionality, and flawless order.",
+        filterAll: "All",
+        filterTravel: "Travel",
+        filterCosmetics: "Cosmetics",
+        filterHome: "Home",
+        btnDetail: "Details",
+        btnAdd: "Add",
+        faqTitle: "Frequently Asked Questions",
+        faq1Q: "What materials are the kits made of?",
+        faq1A: "We use high-strength vegan leather, zinc alloy hardware in metallic silver finish, and durable waterproof textiles.",
+        faq2Q: "Do you ship internationally?",
+        faq2A: "Yes, we offer express shipping worldwide with real-time tracking.",
+        faq3Q: "What is the return policy?",
+        faq3A: "We offer a 30-day total satisfaction guarantee with free returns.",
+        cartTitle: "Your Veltor Cart",
+        cartEmpty: "Your cart is currently empty.",
+        subtotal: "Subtotal",
+        shipping: "International Shipping",
+        freeShipping: "FREE",
+        total: "Total",
+        btnProceedCheckout: "Proceed to Secure Checkout",
+        checkoutTitle: "Shipping & Payment Details",
+        fullName: "Full Name",
+        email: "
